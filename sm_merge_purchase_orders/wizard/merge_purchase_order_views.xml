@@ -21,20 +21,7 @@
                             <field name="merge_similar_lines"/>
                         </group>
                     </group>
-                    <field name="order_ids">
-                        <tree editable="bottom" create="0">
-                            <field name="name" string="Reference"/>
-                            <field name="date_order" string="Order Date"/>
-                            <field name="partner_id" string="Vendor"/>
-                            <field name="company_id" column_invisible="1"/>
-                            <field name="date_planned" string="Receipt Date"/>
-                            <field name="origin" string="Source Document"/>
-                            <field name="currency_id" column_invisible="1"/>
-                            <field name="amount_untaxed" string="Untaxed" widget="monetary"/>
-                            <field name="amount_total" string="Total" widget="monetary"/>
-                            <field name="state" string="Status" widget="badge"/>
-                        </tree>
-                    </field>
+                    <field name="order_ids" readonly="1"/>
                 </sheet>
                 <footer>
                     <button name="action_merge" type="object" string="Done" class="btn-primary"/>
