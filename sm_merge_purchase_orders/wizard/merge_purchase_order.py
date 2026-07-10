@@ -3,7 +3,12 @@ import json
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
-from odoo.tools import format_list
+try:
+    from odoo.tools import format_list
+except ImportError:
+    def format_list(env, items):
+        return ", ".join(str(i) for i in items)
+
 
 
 class SmMergePurchaseOrderWizard(models.TransientModel):
