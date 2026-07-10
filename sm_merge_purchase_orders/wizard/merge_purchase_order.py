@@ -150,16 +150,22 @@ class SmMergePurchaseOrderWizard(models.TransientModel):
         return self.env["purchase.order.line"]
 
     def _line_merge_key(self, line):
-        analytic_distribution = line.analytic_distribution or {}
+        if 'analytic_distribution' in line._fields:
+            analytic_val = json.dumps(line.analytic_distribution or {}, sort_keys=True)
+        else:
+            analytic_val = (
+                line.analytic_account_id.id if 'analytic_account_id' in line._fields else False,
+                tuple(line.analytic_tag_ids.ids) if 'analytic_tag_ids' in line._fields else ()
+            )
         return (
             line.product_id.id,
             line.product_uom.id,
             line.price_unit,
-            line.discount,
+            line.discount if 'discount' in line._fields else 0.0,
             tuple(line.taxes_id.ids),
-            line.product_packaging_id.id,
+            line.product_packaging_id.id if 'product_packaging_id' in line._fields else False,
             line.name or "",
-            json.dumps(analytic_distribution, sort_keys=True),
+            analytic_val,
         )
 
     def _copy_line(self, target_order, line):
