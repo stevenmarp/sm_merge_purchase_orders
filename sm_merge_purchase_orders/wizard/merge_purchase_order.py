@@ -135,12 +135,15 @@ class SmMergePurchaseOrderWizard(models.TransientModel):
             self._copy_line(target_order, line)
             return
 
+        price_unit = target_line.price_unit
         values = {"product_qty": target_line.product_qty + line.product_qty}
         if "product_packaging_qty" in target_line._fields:
             values["product_packaging_qty"] = target_line.product_packaging_qty + line.product_packaging_qty
         if line.date_planned and (not target_line.date_planned or line.date_planned < target_line.date_planned):
             values["date_planned"] = line.date_planned
         target_line.write(values)
+        if target_line.price_unit != price_unit:
+            target_line.write({"price_unit": price_unit})
 
     def _find_matching_line(self, target_order, line):
         line_key = self._line_merge_key(line)
@@ -171,7 +174,9 @@ class SmMergePurchaseOrderWizard(models.TransientModel):
     def _copy_line(self, target_order, line):
         values = line.copy_data({"order_id": target_order.id})[0]
         values.pop("invoice_lines", None)
-        self.env["purchase.order.line"].create(values)
+        new_line = self.env["purchase.order.line"].create(values)
+        if new_line.price_unit != line.price_unit:
+            new_line.write({"price_unit": line.price_unit})
 
     def _finish_source_orders(self, source_orders):
         if not source_orders:
