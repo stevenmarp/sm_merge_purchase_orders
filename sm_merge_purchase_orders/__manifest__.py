@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Merge Purchase Orders",
-    "version": "15.0.1.0.0",
+    "version": "14.0.1.0.0",
     "category": "Purchases",
     "summary": "Merge multiple draft RFQs from the same vendor into one clean purchase order",
     "description": """
