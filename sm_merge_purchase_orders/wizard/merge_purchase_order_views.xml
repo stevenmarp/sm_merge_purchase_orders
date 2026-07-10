@@ -13,8 +13,7 @@
                         <group>
                             <field name="action"/>
                             <field name="destination_order_id"
-                                   invisible="action not in ['existing_cancel', 'existing_delete']"
-                                   required="action in ['existing_cancel', 'existing_delete']"
+                                   attrs="{'invisible': [('action', 'not in', ['existing_cancel', 'existing_delete'])], 'required': [('action', 'in', ['existing_cancel', 'existing_delete'])]}"
                                    options="{'no_create': True}"/>
                         </group>
                         <group>

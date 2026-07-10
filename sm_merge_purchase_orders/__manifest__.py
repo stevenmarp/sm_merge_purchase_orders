@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Merge Purchase Orders",
-    "version": "18.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Purchases",
     "summary": "Merge multiple draft RFQs from the same vendor into one clean purchase order",
     "description": """
@@ -29,7 +29,6 @@ Features
     "depends": ["purchase"],
     "data": [
         "security/ir.model.access.csv",
-        "data/hide_native_merge_action.xml",
         "wizard/merge_purchase_order_views.xml",
     ],
     "images": [
