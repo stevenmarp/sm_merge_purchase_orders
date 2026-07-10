@@ -29,7 +29,6 @@ Features
     "depends": ["purchase"],
     "data": [
         "security/ir.model.access.csv",
-        "data/hide_native_merge_action.xml",
         "wizard/merge_purchase_order_views.xml",
     ],
     "images": [

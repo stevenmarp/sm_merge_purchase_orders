@@ -40,6 +40,13 @@ class SmMergePurchaseOrderWizard(models.TransientModel):
     )
     merge_similar_lines = fields.Boolean(default=True)
 
+    def _register_hook(self):
+        res = super()._register_hook()
+        action = self.env.ref('purchase.action_merger', raise_if_not_found=False)
+        if action and action.binding_model_id:
+            action.binding_model_id = False
+        return res
+
     @api.model
     def default_get(self, fields_list):
         res = super().default_get(fields_list)
