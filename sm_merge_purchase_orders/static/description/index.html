@@ -1,0 +1,159 @@
+<div class="container" style="font-family:Arial, Helvetica, sans-serif; color:#1f2937;">
+
+    <section class="row flex-column p-4 bg-light shadow" style="margin-bottom:40px; border-radius:20px;">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 col-11 text-center">
+                <div style="width:fit-content; margin:0 auto 14px; padding:4px 12px; color:#ffffff; background:#16a34a; border-radius:20px; font-size:12px; font-weight:700;">
+                    Key Features
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters justify-content-center mb-4 px-3">
+            <div class="col-lg-4 col-md-6 col-12 p-2">
+                <div class="h-100 p-4 text-center bg-white shadow-sm" style="border-radius:8px;">
+                    <h4 style="color:#0E2D59; font-size:20px; font-weight:600;">Single Action Menu</h4>
+                    <p style="font-size:14px; color:#555;">Use Actions &gt; Merge Purchase Order directly from the RFQ list. The default Odoo merge action is hidden to avoid confusion.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 p-2">
+                <div class="h-100 p-4 text-center bg-white shadow-sm" style="border-radius:8px;">
+                    <h4 style="color:#0E2D59; font-size:20px; font-weight:600;">Flexible Merge Options</h4>
+                    <p style="font-size:14px; color:#555;">Create a new merged RFQ or merge selected RFQs into an existing selected RFQ.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 p-2">
+                <div class="h-100 p-4 text-center bg-white shadow-sm" style="border-radius:8px;">
+                    <h4 style="color:#0E2D59; font-size:20px; font-weight:600;">Clean Source Orders</h4>
+                    <p style="font-size:14px; color:#555;">Keep merged source RFQs as Cancelled records or delete them after the merge.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 p-2">
+                <div class="h-100 p-4 text-center bg-white shadow-sm" style="border-radius:8px;">
+                    <h4 style="color:#0E2D59; font-size:20px; font-weight:600;">Combined Quantities</h4>
+                    <p style="font-size:14px; color:#555;">Matching lines are merged into one line, so quantities and totals are added automatically.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 p-2">
+                <div class="h-100 p-4 text-center bg-white shadow-sm" style="border-radius:8px;">
+                    <h4 style="color:#0E2D59; font-size:20px; font-weight:600;">Vendor Protection</h4>
+                    <p style="font-size:14px; color:#555;">Only draft RFQs from the same vendor, company, and currency can be merged.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 p-2">
+                <div class="h-100 p-4 text-center bg-white shadow-sm" style="border-radius:8px;">
+                    <h4 style="color:#0E2D59; font-size:20px; font-weight:600;">Chatter Traceability</h4>
+                    <p style="font-size:14px; color:#555;">The merged order keeps a clear chatter note showing which RFQs were merged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row flex-column p-4 bg-light shadow" style="margin-bottom:40px; border-radius:20px;">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 col-11 text-center">
+                <div style="width:fit-content; margin:0 auto 14px; padding:4px 12px; color:#ffffff; background:#16a34a; border-radius:20px; font-size:12px; font-weight:700;">
+                    Step 1
+                </div>
+                <h4 style="color:#0E2D59; font-size:22px; font-weight:700;">Select RFQs from the Same Vendor</h4>
+                <p style="font-size:15px; color:#555;">Select two or more RFQs from the same vendor in the Purchase RFQ list, then open Actions and choose Merge Purchase Order.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center px-3">
+            <div class="col-lg-11 col-12 text-center">
+                <img src="ss_01_action_menu.png" class="img-fluid shadow-sm" style="border-radius:8px; border:1px solid #ddd; max-width:100%;" alt="Select RFQs and click Merge Purchase Order"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="row flex-column p-4 bg-light shadow" style="margin-bottom:40px; border-radius:20px;">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 col-11 text-center">
+                <div style="width:fit-content; margin:0 auto 14px; padding:4px 12px; color:#ffffff; background:#16a34a; border-radius:20px; font-size:12px; font-weight:700;">
+                    Step 2
+                </div>
+                <h4 style="color:#0E2D59; font-size:22px; font-weight:700;">Review the Merge Wizard</h4>
+                <p style="font-size:15px; color:#555;">The wizard shows the selected RFQs with vendor, receipt date, source document, untaxed amount, total, and status before any merge is done.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center px-3 mb-4">
+            <div class="col-lg-11 col-12 text-center">
+                <img src="ss_02_merge_wizard.png" class="img-fluid shadow-sm" style="border-radius:8px; border:1px solid #ddd; max-width:100%;" alt="Merge purchase order wizard"/>
+            </div>
+        </div>
+        <div class="row no-gutters justify-content-center px-3">
+            <div class="col-lg-10 col-12">
+                <div class="bg-white shadow-sm p-4" style="border-radius:8px; font-size:15px; color:#555;">
+                    <p><strong>New Order and Cancel Selected</strong> creates one new merged RFQ and cancels the selected source RFQs.</p>
+                    <p><strong>New Order and Delete Selected</strong> creates one new merged RFQ and removes the selected source RFQs after cancelling them.</p>
+                    <p><strong>Existing Order and Cancel Others</strong> merges selected RFQs into one selected RFQ and cancels the rest.</p>
+                    <p><strong>Existing Order and Delete Others</strong> merges selected RFQs into one selected RFQ and removes the rest after cancelling them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row flex-column p-4 bg-light shadow" style="margin-bottom:40px; border-radius:20px;">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 col-11 text-center">
+                <div style="width:fit-content; margin:0 auto 14px; padding:4px 12px; color:#ffffff; background:#16a34a; border-radius:20px; font-size:12px; font-weight:700;">
+                    Step 3
+                </div>
+                <h4 style="color:#0E2D59; font-size:22px; font-weight:700;">Confirm Success</h4>
+                <p style="font-size:15px; color:#555;">After clicking Done, the module displays a clear success message. Use Open Merged Order to jump straight to the new RFQ.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center px-3">
+            <div class="col-lg-11 col-12 text-center">
+                <img src="ss_03_success_message.png" class="img-fluid shadow-sm" style="border-radius:8px; border:1px solid #ddd; max-width:100%;" alt="Order merged successfully message"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="row flex-column p-4 bg-light shadow" style="margin-bottom:40px; border-radius:20px;">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 col-11 text-center">
+                <div style="width:fit-content; margin:0 auto 14px; padding:4px 12px; color:#ffffff; background:#16a34a; border-radius:20px; font-size:12px; font-weight:700;">
+                    Step 4
+                </div>
+                <h4 style="color:#0E2D59; font-size:22px; font-weight:700;">Open the Merged RFQ</h4>
+                <p style="font-size:15px; color:#555;">The merged RFQ contains the combined quantity and total. The chatter shows exactly which source RFQs were merged.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center px-3 mb-4">
+            <div class="col-lg-11 col-12 text-center">
+                <img src="ss_04_merged_order.png" class="img-fluid shadow-sm" style="border-radius:8px; border:1px solid #ddd; max-width:100%;" alt="Merged RFQ with combined quantity and chatter"/>
+            </div>
+        </div>
+        <div class="row no-gutters justify-content-center px-3">
+            <div class="col-lg-10 col-12">
+                <div class="bg-white shadow-sm p-4" style="border-radius:8px; font-size:15px; color:#555;">
+                    <p><strong>Example result:</strong> 2 RFQs from the same vendor are merged into one new RFQ.</p>
+                    <p><strong>Quantity:</strong> 6 + 7 = 13</p>
+                    <p><strong>Total:</strong> $345.00 + $402.50 = $747.50</p>
+                    <p><strong>Source RFQs:</strong> the selected source orders are moved to Cancelled when using New Order and Cancel Selected.</p>
+                    <p><strong>Chatter:</strong> Merged purchase orders: P00050 and P00051</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row flex-column p-4 bg-light shadow" style="margin-bottom:40px; border-radius:20px;">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 col-11 text-center">
+                <div style="width:fit-content; margin:0 auto 14px; padding:4px 12px; color:#ffffff; background:#16a34a; border-radius:20px; font-size:12px; font-weight:700;">
+                    Safeguards
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters justify-content-center px-3">
+            <div class="col-lg-10 col-12">
+                <div class="bg-white shadow-sm p-4" style="border-radius:8px; font-size:15px; color:#555;">
+                    <p>The merge is allowed only for draft RFQs from the same vendor, same company, and same currency.</p>
+                    <p>Purchase Orders, Cancelled orders, billed orders, received orders, and locked orders are blocked from merge.</p>
+                    <p>Matching product lines are combined automatically when product, unit of measure, price, taxes, discount, packaging, description, and analytic distribution match.</p>
+                    <p>Different products or different pricing stay as separate order lines, keeping purchase data accurate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

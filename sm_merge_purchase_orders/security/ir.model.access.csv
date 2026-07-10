@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sm_merge_purchase_order_wizard,sm.merge.purchase.order.wizard,model_sm_merge_purchase_order_wizard,purchase.group_purchase_user,1,1,1,1
+access_sm_merge_purchase_order_message,sm.merge.purchase.order.message,model_sm_merge_purchase_order_message,purchase.group_purchase_user,1,1,1,1

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sm_merge_purchase_order_wizard_form" model="ir.ui.view">
+        <field name="name">sm.merge.purchase.order.wizard.form</field>
+        <field name="model">sm.merge.purchase.order.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Merge PO">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        Only Draft Purchase Order/RFQ of Same Vendor/Partner Can be Merged
+                    </div>
+                    <group>
+                        <group>
+                            <field name="action"/>
+                            <field name="destination_order_id"
+                                   invisible="action not in ['existing_cancel', 'existing_delete']"
+                                   required="action in ['existing_cancel', 'existing_delete']"
+                                   options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="merge_similar_lines"/>
+                        </group>
+                    </group>
+                    <field name="order_ids">
+                        <list editable="bottom" create="0">
+                            <field name="name" string="Reference"/>
+                            <field name="date_order" string="Order Date"/>
+                            <field name="partner_id" string="Vendor"/>
+                            <field name="date_planned" string="Receipt Date"/>
+                            <field name="origin" string="Source Document"/>
+                            <field name="currency_id" column_invisible="1"/>
+                            <field name="amount_untaxed" string="Untaxed" widget="monetary"/>
+                            <field name="amount_total" string="Total" widget="monetary"/>
+                            <field name="state" string="Status" widget="badge"/>
+                        </list>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="action_merge" type="object" string="Done" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sm_merge_purchase_order_wizard" model="ir.actions.act_window">
+        <field name="name">Merge Purchase Order</field>
+        <field name="res_model">sm.merge.purchase.order.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_sm_merge_purchase_order_wizard_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="binding_view_types">list</field>
+    </record>
+
+    <record id="view_sm_merge_purchase_order_message_form" model="ir.ui.view">
+        <field name="name">sm.merge.purchase.order.message.form</field>
+        <field name="model">sm.merge.purchase.order.message</field>
+        <field name="arch" type="xml">
+            <form string="Information">
+                <sheet>
+                    <h2>Message</h2>
+                    <field name="message" nolabel="1" readonly="1"/>
+                    <field name="purchase_order_id" invisible="1"/>
+                </sheet>
+                <footer>
+                    <button name="action_open_purchase_order" type="object" string="Open Merged Order" class="btn-primary"/>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
